@@ -1,1 +1,279 @@
-<h1>Hello I'm Gargi.</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gargi Surse | Portfolio</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+body{
+    background:#0f172a;
+    color:#f8fafc;
+    min-height:100vh;
+}
+
+.container{
+    max-width:1100px;
+    margin:auto;
+    padding:50px 25px;
+}
+
+.hero{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:40px;
+}
+
+.hero-text{
+    flex:1;
+    min-width:280px;
+}
+
+.hero-text h1{
+    font-size:3rem;
+    margin-bottom:10px;
+}
+
+.hero-text h1 span{
+    color:#38bdf8;
+}
+
+.hero-text h3{
+    color:#94a3b8;
+    margin-bottom:20px;
+    font-weight:500;
+}
+
+.hero-text p{
+    color:#cbd5e1;
+    line-height:1.8;
+    margin-bottom:25px;
+}
+
+.buttons{
+    display:flex;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    text-decoration:none;
+    padding:12px 24px;
+    border-radius:12px;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary{
+    background:#38bdf8;
+    color:#081018;
+}
+
+.primary:hover{
+    background:#0ea5e9;
+}
+
+.secondary{
+    border:2px solid #38bdf8;
+    color:#38bdf8;
+}
+
+.secondary:hover{
+    background:#38bdf8;
+    color:#081018;
+}
+
+.avatar{
+    flex:0.7;
+    min-width:250px;
+    display:flex;
+    justify-content:center;
+}
+
+.circle{
+    width:260px;
+    height:260px;
+    border-radius:50%;
+    background:linear-gradient(135deg,#38bdf8,#7c3aed);
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-size:90px;
+}
+
+.section{
+    margin-top:70px;
+}
+
+.section h2{
+    color:#38bdf8;
+    margin-bottom:25px;
+    font-size:1.8rem;
+}
+
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:20px;
+}
+
+.card{
+    background:#1e293b;
+    padding:25px;
+    border-radius:18px;
+    border:1px solid rgba(255,255,255,.08);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-6px);
+    border-color:#38bdf8;
+}
+
+.card h3{
+    margin-bottom:12px;
+}
+
+.card p{
+    color:#cbd5e1;
+    line-height:1.6;
+}
+
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:12px;
+}
+
+.skill{
+    background:#1e293b;
+    padding:10px 18px;
+    border-radius:30px;
+    border:1px solid rgba(255,255,255,.08);
+}
+
+footer{
+    text-align:center;
+    padding:40px 0;
+    color:#94a3b8;
+}
+
+@media(max-width:768px){
+    .hero{
+        text-align:center;
+    }
+
+    .buttons{
+        justify-content:center;
+    }
+
+    .hero-text h1{
+        font-size:2.3rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<section class="hero">
+
+<div class="hero-text">
+<h1>Hey there, I'm <span>Gargi Surse</span> 👩‍💻</h1>
+
+<h3>Information Technology Student | Full Stack Web Developer</h3>
+
+<p>
+I'm an Information Technology student and a passionate Full Stack Web Developer who enjoys turning ideas into practical and user-friendly web applications. I love building projects, learning new technologies, and improving my skills with every project I create.
+</p>
+
+<div class="buttons">
+<a href="#" class="btn primary">View Projects</a>
+<a href="#" class="btn secondary">Contact Me</a>
+</div>
+
+</div>
+
+<div class="avatar">
+<div class="circle">👩‍💻</div>
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>What I'm Working On</h2>
+
+<div class="grid">
+
+<div class="card">
+<h3>Web Development</h3>
+<p>Building real-world full-stack applications using modern web technologies.</p>
+</div>
+
+<div class="card">
+<h3>Learning</h3>
+<p>Improving JavaScript, React, and backend development while exploring deployment.</p>
+</div>
+
+<div class="card">
+<h3>Collaboration</h3>
+<p>Open to working with developers on projects, open-source contributions, and creative ideas.</p>
+</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Ask Me About</h2>
+
+<div class="skills">
+
+<div class="skill">HTML</div>
+<div class="skill">CSS</div>
+<div class="skill">JavaScript</div>
+<div class="skill">React</div>
+<div class="skill">Full Stack Development</div>
+<div class="skill">Beginner Web Development</div>
+
+</div>
+
+</section>
+
+<section class="section">
+
+<h2>Fun Fact</h2>
+
+<div class="card">
+<p>
+I enjoy building projects from scratch and discovering small tech tricks that make development easier and more fun.
+</p>
+</div>
+
+</section>
+
+<footer>
+
+Made with ❤️ by Gargi Surse
+
+</footer>
+
+</div>
+
+</body>
+</html>
