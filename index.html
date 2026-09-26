@@ -3,244 +3,442 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Gargi Surse | Portfolio</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
 <style>
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Poppins',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+scroll-behavior:smooth;
 }
 
 body{
-    background:#0f172a;
-    color:#f8fafc;
-    min-height:100vh;
+background:#050816;
+color:white;
+overflow-x:hidden;
+}
+
+body::before{
+content:"";
+position:fixed;
+inset:0;
+background:
+radial-gradient(circle at 20% 20%, rgba(99,102,241,.18), transparent 35%),
+radial-gradient(circle at 80% 30%, rgba(236,72,153,.18), transparent 30%),
+radial-gradient(circle at 50% 80%, rgba(56,189,248,.18), transparent 35%);
+z-index:-2;
+}
+
+.blob{
+position:fixed;
+border-radius:50%;
+filter:blur(70px);
+animation:float 8s ease-in-out infinite alternate;
+z-index:-1;
+}
+
+.blob:nth-child(1){
+width:220px;
+height:220px;
+background:#7c3aed;
+top:5%;
+left:-5%;
+}
+
+.blob:nth-child(2){
+width:260px;
+height:260px;
+background:#2563eb;
+bottom:-5%;
+right:-5%;
+animation-duration:10s;
+}
+
+@keyframes float{
+from{transform:translateY(-20px);}
+to{transform:translateY(20px);}
 }
 
 .container{
-    max-width:1100px;
-    margin:auto;
-    padding:50px 25px;
+width:min(1150px,92%);
+margin:auto;
+}
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:25px 0;
+position:sticky;
+top:0;
+backdrop-filter:blur(16px);
+background:rgba(5,8,22,.35);
+z-index:100;
+}
+
+.logo{
+font-size:1.4rem;
+font-weight:700;
+}
+
+.logo span{
+color:#60a5fa;
+}
+
+nav a{
+color:#cbd5e1;
+text-decoration:none;
+margin-left:28px;
+transition:.3s;
+}
+
+nav a:hover{
+color:#60a5fa;
 }
 
 .hero{
-    display:flex;
-    flex-wrap:wrap;
-    align-items:center;
-    justify-content:space-between;
-    gap:40px;
+display:grid;
+grid-template-columns:1.2fr .8fr;
+align-items:center;
+gap:40px;
+min-height:88vh;
 }
 
-.hero-text{
-    flex:1;
-    min-width:280px;
+.hero h1{
+font-size:clamp(2.5rem,6vw,4.3rem);
+line-height:1.1;
+margin-bottom:10px;
 }
 
-.hero-text h1{
-    font-size:3rem;
-    margin-bottom:10px;
+.hero h1 span{
+background:linear-gradient(90deg,#60a5fa,#a855f7,#ec4899);
+-webkit-background-clip:text;
+-webkit-text-fill-color:transparent;
 }
 
-.hero-text h1 span{
-    color:#38bdf8;
+.subtitle{
+font-size:1.15rem;
+color:#94a3b8;
+margin-bottom:20px;
+height:30px;
 }
 
-.hero-text h3{
-    color:#94a3b8;
-    margin-bottom:20px;
-    font-weight:500;
+.hero p{
+color:#cbd5e1;
+line-height:1.8;
+margin-bottom:30px;
+max-width:560px;
 }
 
-.hero-text p{
-    color:#cbd5e1;
-    line-height:1.8;
-    margin-bottom:25px;
-}
-
-.buttons{
-    display:flex;
-    gap:15px;
-    flex-wrap:wrap;
+.btns{
+display:flex;
+gap:16px;
+flex-wrap:wrap;
 }
 
 .btn{
-    text-decoration:none;
-    padding:12px 24px;
-    border-radius:12px;
-    font-weight:600;
-    transition:.3s;
+padding:14px 28px;
+border-radius:14px;
+text-decoration:none;
+font-weight:600;
+transition:.35s;
 }
 
 .primary{
-    background:#38bdf8;
-    color:#081018;
+background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+color:white;
+box-shadow:0 10px 30px rgba(59,130,246,.35);
 }
 
 .primary:hover{
-    background:#0ea5e9;
+transform:translateY(-4px) scale(1.03);
 }
 
 .secondary{
-    border:2px solid #38bdf8;
-    color:#38bdf8;
+border:1px solid rgba(255,255,255,.18);
+background:rgba(255,255,255,.05);
+backdrop-filter:blur(14px);
+color:white;
 }
 
 .secondary:hover{
-    background:#38bdf8;
-    color:#081018;
+background:rgba(255,255,255,.1);
+transform:translateY(-4px);
 }
 
-.avatar{
-    flex:0.7;
-    min-width:250px;
-    display:flex;
-    justify-content:center;
+.hero-card{
+display:flex;
+justify-content:center;
 }
 
-.circle{
-    width:260px;
-    height:260px;
-    border-radius:50%;
-    background:linear-gradient(135deg,#38bdf8,#7c3aed);
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    font-size:90px;
+.profile{
+width:320px;
+height:320px;
+border-radius:35px;
+background:rgba(255,255,255,.06);
+backdrop-filter:blur(20px);
+border:1px solid rgba(255,255,255,.12);
+display:flex;
+align-items:center;
+justify-content:center;
+position:relative;
+overflow:hidden;
+box-shadow:0 30px 60px rgba(0,0,0,.35);
 }
 
-.section{
-    margin-top:70px;
+.profile::before{
+content:"";
+position:absolute;
+width:180%;
+height:180%;
+background:conic-gradient(from 0deg,#60a5fa,#8b5cf6,#ec4899,#60a5fa);
+animation:spin 7s linear infinite;
 }
 
-.section h2{
-    color:#38bdf8;
-    margin-bottom:25px;
-    font-size:1.8rem;
+.profile::after{
+content:"";
+position:absolute;
+inset:5px;
+background:#0b1120;
+border-radius:30px;
+}
+
+.profile span{
+position:relative;
+z-index:2;
+font-size:120px;
+}
+
+@keyframes spin{
+to{transform:rotate(360deg);}
+}
+
+section{
+padding:70px 0;
+}
+
+.title{
+font-size:2rem;
+margin-bottom:10px;
+}
+
+.title span{
+color:#60a5fa;
+}
+
+.section-text{
+color:#94a3b8;
+margin-bottom:35px;
 }
 
 .grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:20px;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:24px;
 }
 
 .card{
-    background:#1e293b;
-    padding:25px;
-    border-radius:18px;
-    border:1px solid rgba(255,255,255,.08);
-    transition:.3s;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+backdrop-filter:blur(14px);
+border-radius:22px;
+padding:28px;
+transition:.35s;
+position:relative;
+overflow:hidden;
+}
+
+.card::before{
+content:"";
+position:absolute;
+top:0;
+left:0;
+width:100%;
+height:4px;
+background:linear-gradient(90deg,#60a5fa,#a855f7);
+transform:scaleX(0);
+transform-origin:left;
+transition:.35s;
+}
+
+.card:hover::before{
+transform:scaleX(1);
 }
 
 .card:hover{
-    transform:translateY(-6px);
-    border-color:#38bdf8;
+transform:translateY(-8px);
+border-color:rgba(96,165,250,.35);
 }
 
 .card h3{
-    margin-bottom:12px;
+margin-bottom:12px;
 }
 
 .card p{
-    color:#cbd5e1;
-    line-height:1.6;
+color:#cbd5e1;
+line-height:1.7;
 }
 
 .skills{
-    display:flex;
-    flex-wrap:wrap;
-    gap:12px;
+display:flex;
+flex-wrap:wrap;
+gap:14px;
 }
 
 .skill{
-    background:#1e293b;
-    padding:10px 18px;
-    border-radius:30px;
-    border:1px solid rgba(255,255,255,.08);
+padding:12px 18px;
+border-radius:30px;
+background:rgba(255,255,255,.05);
+border:1px solid rgba(255,255,255,.08);
+transition:.3s;
+}
+
+.skill:hover{
+background:linear-gradient(135deg,#3b82f6,#8b5cf6);
+transform:translateY(-4px);
 }
 
 footer{
-    text-align:center;
-    padding:40px 0;
-    color:#94a3b8;
+text-align:center;
+padding:40px 0;
+color:#94a3b8;
+border-top:1px solid rgba(255,255,255,.08);
+margin-top:40px;
 }
 
-@media(max-width:768px){
-    .hero{
-        text-align:center;
-    }
-
-    .buttons{
-        justify-content:center;
-    }
-
-    .hero-text h1{
-        font-size:2.3rem;
-    }
+.fade{
+opacity:0;
+transform:translateY(30px);
+transition:.8s ease;
 }
+
+.fade.show{
+opacity:1;
+transform:none;
+}
+
+@media(max-width:900px){
+
+header{
+flex-direction:column;
+gap:15px;
+}
+
+nav a{
+margin:0 12px;
+}
+
+.hero{
+grid-template-columns:1fr;
+text-align:center;
+padding-top:40px;
+}
+
+.hero p{
+margin:auto auto 30px;
+}
+
+.btns{
+justify-content:center;
+}
+
+.profile{
+width:260px;
+height:260px;
+}
+
+}
+
 </style>
 </head>
 
 <body>
 
+<div class="blob"></div>
+<div class="blob"></div>
+
 <div class="container">
 
-<section class="hero">
+<header>
 
-<div class="hero-text">
-<h1>Hey there, I'm <span>Gargi Surse</span> 👩‍💻</h1>
+<div class="logo">Gargi<span>Surse</span></div>
 
-<h3>Information Technology Student | Full Stack Web Developer</h3>
+<nav>
+<a href="#about">About</a>
+<a href="#work">Work</a>
+<a href="#skills">Skills</a>
+</nav>
+
+</header>
+
+<section class="hero" id="about">
+
+<div>
+
+<h1>Hey there, I'm <span>Gargi Surse</span> 👋</h1>
+
+<div class="subtitle" id="typing"></div>
 
 <p>
-I'm an Information Technology student and a passionate Full Stack Web Developer who enjoys turning ideas into practical and user-friendly web applications. I love building projects, learning new technologies, and improving my skills with every project I create.
+I'm an Information Technology student and a Full Stack Web Developer who enjoys turning ideas into practical and user-friendly web applications. I love building projects, learning modern web technologies, and creating real-world solutions through code.
 </p>
 
-<div class="buttons">
-<a href="#" class="btn primary">View Projects</a>
-<a href="#" class="btn secondary">Contact Me</a>
+<div class="btns">
+<a href="#work" class="btn primary">View My Work</a>
+<a href="https://github.com/" class="btn secondary">GitHub</a>
 </div>
 
 </div>
 
-<div class="avatar">
-<div class="circle">👩‍💻</div>
+<div class="hero-card">
+<div class="profile">
+<span>👩‍💻</span>
+</div>
 </div>
 
 </section>
 
-<section class="section">
+<section id="work" class="fade">
 
-<h2>What I'm Working On</h2>
+<h2 class="title">What I'm <span>Working On</span></h2>
+
+<p class="section-text">Learning by building practical projects and improving with every experience.</p>
 
 <div class="grid">
 
 <div class="card">
-<h3>Web Development</h3>
-<p>Building real-world full-stack applications using modern web technologies.</p>
+<h3>💻 Full Stack Development</h3>
+<p>Building responsive web applications with modern front-end and back-end technologies.</p>
 </div>
 
 <div class="card">
-<h3>Learning</h3>
-<p>Improving JavaScript, React, and backend development while exploring deployment.</p>
+<h3>🚀 Modern Web Technologies</h3>
+<p>Strengthening my JavaScript skills while exploring React and deployment workflows.</p>
 </div>
 
 <div class="card">
-<h3>Collaboration</h3>
-<p>Open to working with developers on projects, open-source contributions, and creative ideas.</p>
+<h3>🤝 Collaboration</h3>
+<p>Always open to collaborating on interesting projects, open-source contributions, and creative ideas.</p>
 </div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section id="skills" class="fade">
 
-<h2>Ask Me About</h2>
+<h2 class="title">Ask Me <span>About</span></h2>
+
+<p class="section-text">Technologies and topics I enjoy working with.</p>
 
 <div class="skills">
 
@@ -249,15 +447,15 @@ I'm an Information Technology student and a passionate Full Stack Web Developer 
 <div class="skill">JavaScript</div>
 <div class="skill">React</div>
 <div class="skill">Full Stack Development</div>
-<div class="skill">Beginner Web Development</div>
+<div class="skill">Git & GitHub</div>
 
 </div>
 
 </section>
 
-<section class="section">
+<section class="fade">
 
-<h2>Fun Fact</h2>
+<h2 class="title">Fun <span>Fact</span></h2>
 
 <div class="card">
 <p>
@@ -268,12 +466,49 @@ I enjoy building projects from scratch and discovering small tech tricks that ma
 </section>
 
 <footer>
-
 Made with ❤️ by Gargi Surse
-
 </footer>
 
 </div>
+
+<script>
+
+const text="Information Technology Student • Full Stack Web Developer";
+const typing=document.getElementById("typing");
+
+let i=0;
+
+function type(){
+
+if(i<text.length){
+
+typing.textContent+=text.charAt(i);
+i++;
+setTimeout(type,60);
+
+}
+
+}
+
+type();
+
+const observer=new IntersectionObserver(entries=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add("show");
+
+}
+
+});
+
+},{threshold:0.2});
+
+document.querySelectorAll(".fade").forEach(el=>observer.observe(el));
+
+</script>
 
 </body>
 </html>
